@@ -6,9 +6,9 @@ var bluebird = require('bluebird');
 module.exports = {
   messages: {
     get: function (req, res) {
-      console.log('you made this request, dude');
+      // console.log('you made this request, dude');
       models.messages.get(function(results) {
-        console.log("THIS IS THE GET RESULTS", results);
+        // console.log("THIS IS THE GET RESULTS", results);
         res.send(JSON.stringify(results));
       });
     }, // a function which handles a get request for all messages
@@ -17,6 +17,7 @@ module.exports = {
       // when a message comes in,
       // store the message in the messages table (username, message, roomname)
       models.messages.post(req.body);
+      // console.log(req.body);
       res.send("message sent"); 
     } // a function which handles posting a message to the database
   },
